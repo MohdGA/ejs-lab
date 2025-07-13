@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= menuItems[1] %> </title>
+</head>
+<body>
+<%- include('./partials/nav'); %>
+
+<ul>
+<% menuItems[0].forEach((food) => { %>
+    <h1><%= food.category%></h1>
+    <li>Name: <%= food.name %></li>
+    <li>Price: <%= food.price%></li>
+    <li>Rate: <%= food.rating%> </li>
+    <li>Details: <%= food.details%> </li>
+<%})%>
+</ul>
+<%- include('./partials/footer') %>

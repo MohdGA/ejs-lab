@@ -62,4 +62,12 @@ app.get('/menu', (req,res) => {
   })
 })
 
+app.get('/menu/:category', (req,res) => {
+  const category = req.params.category;
+
+    res.render('category.ejs',{
+    menuItems: [RESTAURANT.menu.filter((foods) => foods.category === category),category.toLocaleUpperCase()]
+  })
+})
+
 app.listen(3001);
